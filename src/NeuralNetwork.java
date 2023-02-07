@@ -8,11 +8,17 @@ public class NeuralNetwork {
     //output layer
     Neuron n4;
     Neuron n5;
+    Neuron n6;
+    Neuron n7;
+
 
     public static void main(String[] args) {
         int[] imageOfZero = {1,1,1,1, 1,0,0,1, 1,0,0,1, 1,0,0,1, 1,1,1,1};
         int[] imageOfOne = {0,0,1,0, 0,0,1,0, 0,0,1,0, 0,0,1,0, 0,0,1,0};
         int[] imageOfTwo = {1,1,1,1, 0,0,0,1, 1,1,1,1, 1,0,0,0, 1,1,1,1};
+        int[] imageOfThree = {0,1,1,1, 0,0,0,1, 0,0,1,1, 0,0,0,1, 0,1,1,1};
+        int[] imageOfFour = {1,0,1,0, 1,0,1,0, 1,1,1,0, 0,0,1,0, 0,0,1,0};
+        int[] imageOfFive = {1,1,1,1, 1,0,0,0, 1,1,1,1, 0,0,0,1, 1,1,1,1};
 
         NeuralNetwork network = new NeuralNetwork();
 
