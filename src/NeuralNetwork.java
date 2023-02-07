@@ -9,7 +9,6 @@ public class NeuralNetwork {
     Neuron n4;
     Neuron n5;
     Neuron n6;
-    Neuron n7;
 
 
     public static void main(String[] args) {
@@ -30,6 +29,15 @@ public class NeuralNetwork {
 
         result = network.classify(imageOfTwo);
         System.out.println("passed the image of Two, predicted: " + result);
+
+        result = network.classify(imageOfThree);
+        System.out.println("passed the image of Three, predicted: " + result);
+
+        result = network.classify(imageOfFour);
+        System.out.println("passed the image of Four, predicted: " + result);
+
+        result = network.classify(imageOfFive);
+        System.out.println("passed the image of Five, predicted: " + result);
     }
 
     public NeuralNetwork() {
@@ -41,6 +49,7 @@ public class NeuralNetwork {
 
         n4 = new Neuron(3, threshold);
         n5 = new Neuron(3, threshold);
+        n6 = new Neuron(3, threshold);
     }
 
     public int classify(int[] input) {
@@ -52,14 +61,20 @@ public class NeuralNetwork {
 
         int n4Result = n4.produceOutput(hiddenLayerResults);
         int n5Result = n5.produceOutput(hiddenLayerResults);
+        int n6Result = n6.produceOutput(hiddenLayerResults);
 
-        if (n4Result == 0 && n5Result == 0)
+
+        if (n4Result == 0 && n5Result == 0 && n6Result == 0)
             return 0;
-        else if (n4Result == 1 && n5Result == 1)
+        else if (n4Result == 1 && n5Result == 0 && n6Result == 0)
             return 1;
-        else if (n4Result == 0 && n5Result == 1)
+        else if (n4Result == 1 && n5Result == 1 && n6Result == 0)
             return 2;        
-        else
+        else if (n4Result == 1 && n5Result == 1 && n6Result == 1)
             return 3;
+        else if (n4Result == 0 && n5Result == 1 && n6Result == 1)
+            return 4;
+        else //if (n4Result == 0 && n5Result == 0 && n6Result == 1)
+            return 5;           
     }   
 }
