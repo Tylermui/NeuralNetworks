@@ -10,9 +10,9 @@ public class NeuralNetwork {
     Neuron n5;
 
     public static void main(String[] args) {
-        int[] imageOfZero = {1,1,1,1,1, 1,0,0,0,1, 1,0,0,0,1, 1,0,0,0,1, 1,1,1,1,1};
-        int[] imageOfOne = {0,0,1,0,0, 0,0,1,0,0, 0,0,1,0,0, 0,0,1,0,0, 0,0,1,0,0};
-        int[] imageOfTwo = {1,1,1,1,1, 0,0,0,0,1, 0,1,1,1,1, 1,0,0,0,0, 1,1,1,1,1};
+        int[] imageOfZero = {1,1,1,1, 1,0,0,1, 1,0,0,1, 1,0,0,1, 1,1,1,1};
+        int[] imageOfOne = {0,0,1,0, 0,0,1,0, 0,0,1,0, 0,0,1,0, 0,0,1,0};
+        int[] imageOfTwo = {1,1,1,1, 0,0,0,1, 1,1,1,1, 1,0,0,0, 1,1,1,1};
 
         NeuralNetwork network = new NeuralNetwork();
 
@@ -27,7 +27,7 @@ public class NeuralNetwork {
     }
 
     public NeuralNetwork() {
-        int imageSize = 25;
+        int imageSize = 20; //for a 4X5 image
         double threshold = 0.0;
         n1 = new Neuron(imageSize, threshold);
         n2 = new Neuron(imageSize, threshold);
