@@ -6,6 +6,25 @@ public class Neuron {
     double[] weights;
     double threshold; 
 
+    public Neuron(Neuron parent) {
+        this.numWeights = parent.numWeights;
+        this.threshold = parent.threshold;
+        this.weights = new double[parent.numWeights];
+
+        
+
+    }
+
+    public void mutate() {
+        Random random = new Random();
+
+        int i = random.nextInt(numWeights);
+
+        weights[i] = random.nextDouble();
+        if(random.nextBoolean())
+            weights[i] *= -1;
+    }
+
     public Neuron(int numWeights, double threshold) {
         this.numWeights = numWeights;
         this.threshold = threshold;

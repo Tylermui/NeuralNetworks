@@ -40,6 +40,8 @@ public class NeuralNetwork {
         System.out.println("passed the image of Five, predicted: " + result);
     }
 
+    
+
     public NeuralNetwork() {
         int imageSize = 20; //for a 4X5 image
         double threshold = 0.0;
